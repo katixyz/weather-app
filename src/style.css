@@ -53,6 +53,11 @@ footer {
   margin-bottom: 5px;
 }
 
+.search-city-button:hover {
+  cursor: pointer;
+  box-shadow: #f7b602 2px 2px 4px;
+}
+
 .weather-today {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
