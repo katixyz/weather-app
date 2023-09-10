@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-city">
+        <input
+          type="text"
+          id="input-city"
+          placeholder="How is the weather in..."
+          class="col-10 input-city"
+        />
+        <input type="submit" value="Search" class="col-1 search-city-button" />
+      </form>
+
+      <p class="time" id="date">Day & time</p>
+
+      <h1 id="current-city">City</h1>
+
+      <div class="row weather-today">
+        <div class="col-1 weather-icon">
+          <i class="fa-solid fa-sun large-icon" style="color: #f7b602"></i>
+        </div>
+        <div class="col-7 temperature">
+          Temperature <span class="temp" id="temp-today">17 °C</span>
+          <span class="change-unit" id="convert-unit"> | °F</span>
+        </div>
+        <div class="col-4 climate">
+          <ul class="climate-values">
+            <li>Precipitation</li>
+            <li>Humiditiy</li>
+            <li>Wind speed</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Weather forecast</h2>
+
+      <button class="forecast-five">5 days</button>
+
+      <div class="card-group">
+        <div class="card">
+          <i class="fa-solid fa-sun small-icon" style="color: #f7b602"></i>
+          <div class="card-body">
+            <h5 class="card-title">Monday</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              Temperature °C <span class="fahrenheit-small"> | °F</span>
+            </h6>
+            <ul class="climate-values-small">
+              <li>Precipitation</li>
+              <li>Humiditiy</li>
+              <li>Wind speed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-sun small-icon" style="color: #f7b602"></i>
+          <div class="card-body">
+            <h5 class="card-title">Tuesday</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              Temperature °C <span class="fahrenheit-small"> | °F</span>
+            </h6>
+            <ul class="climate-values-small">
+              <li>Precipitation</li>
+              <li>Humiditiy</li>
+              <li>Wind speed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-sun small-icon" style="color: #f7b602"></i>
+          <div class="card-body">
+            <h5 class="card-title">Wednesday</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              Temperature °C <span class="fahrenheit-small"> | °F</span>
+            </h6>
+            <ul class="climate-values-small">
+              <li>Precipitation</li>
+              <li>Humiditiy</li>
+              <li>Wind speed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-sun small-icon" style="color: #f7b602"></i>
+          <div class="card-body">
+            <h5 class="card-title">Thursday</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              Temperature °C <span class="fahrenheit-small"> | °F</span>
+            </h6>
+            <ul class="climate-values-small">
+              <li>Precipitation</li>
+              <li>Humiditiy</li>
+              <li>Wind speed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-sun small-icon" style="color: #f7b602"></i>
+          <div class="card-body">
+            <h5 class="card-title">Friday</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              Temperature °C <span class="fahrenheit-small"> | °F</span>
+            </h6>
+            <ul class="climate-values-small">
+              <li>Precipitation</li>
+              <li>Humiditiy</li>
+              <li>Wind speed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>Coded by Kati Zech ✨</footer>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
