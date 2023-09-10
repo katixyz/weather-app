@@ -32,6 +32,11 @@ footer {
   padding: 15px;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .time {
   text-align: right;
   color: #fff;
