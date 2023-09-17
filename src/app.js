@@ -34,6 +34,12 @@ function getTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempToday = document.querySelector("#temp-today");
   tempToday.innerHTML = `${temperature} °C`;
+  let iconElement = document.querySelector("#icon-today");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function changeCity(event) {
