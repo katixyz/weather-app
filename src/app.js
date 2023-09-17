@@ -33,8 +33,14 @@ let apiKey = "99b8f9330a1bfba3a85e523fd3c2e528";
 function getTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempToday = document.querySelector("#temp-today");
-  tempToday.innerHTML = `${temperature} °C`;
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
   let iconElement = document.querySelector("#icon-today");
+
+  tempToday.innerHTML = `${temperature} °C`;
+  windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
