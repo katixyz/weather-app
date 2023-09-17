@@ -34,14 +34,15 @@ function getTemperature(response) {
   let tempToday = document.querySelector("#temp-today");
   let windElement = document.querySelector("#wind");
   let humidityElement = document.querySelector("#humidity");
+  let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#icon-today");
   let h1 = document.querySelector("h1");
 
   tempToday.innerHTML = `${celsiusTemperature}`;
   windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+  descriptionElement.innerHTML = `${response.data.weather[0].description}`;
   h1.innerHTML = `${response.data.name}`;
-  console.log(response.data);
 
   iconElement.setAttribute(
     "src",

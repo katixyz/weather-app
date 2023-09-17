@@ -97,6 +97,10 @@ a {
   margin: 0px;
 }
 
+.description:first-letter {
+  text-transform: uppercase;
+}
+
 .active {
   color: rgb(236, 110, 76, 0.3);
 }
