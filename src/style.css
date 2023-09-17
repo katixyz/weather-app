@@ -33,7 +33,7 @@ footer {
 }
 
 a {
-  color: #fff;
+  color: black;
   text-decoration: none;
 }
 
@@ -66,26 +66,24 @@ a {
 .weather-today {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
+  padding: 30px 12px;
 }
 .weather-icon {
   font-size: 36px;
   text-align: center;
-  padding: 30px 12px;
 }
 
 .temperature {
-  font-size: 36px;
+  font-size: 66px;
   font-weight: 300;
-  padding: 30px 12px;
 }
 
-.change-unit {
-  color: rgb(98, 98, 98);
-  padding: 30px 25px;
-}
-
-.change-unit:hover {
-  cursor: pointer;
+.units {
+  font-size: 32px;
+  font-weight: 300;
+  position: relative;
+  top: -22px;
+  margin-left: 5px;
 }
 
 .climate-values {
@@ -94,6 +92,15 @@ a {
   font-size: 20px;
   padding: 15px;
   margin: 0px;
+}
+
+.active {
+  color: rgb(236, 110, 76, 0.3);
+}
+
+.active:hover {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .forecast-five {
@@ -115,7 +122,7 @@ a {
 }
 
 .fahrenheit-small {
-  color: rgb(104, 104, 104);
+  color: rgb(236, 110, 76, 0.3);
   padding: 25px 10px;
 }
 
