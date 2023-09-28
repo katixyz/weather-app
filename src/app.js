@@ -29,40 +29,72 @@ if (minutes > 9) {
 
 // Display forecast:
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+
+  return day;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecast = document.querySelector("#weather-forecast");
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = "";
-  let forecastDays = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
-  forecastDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDays, index) {
+    if (index > 0 && index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
           <div class="col-2">
             <div class="weather-forecast-date">
-              <div class="forecast-day">${day}</div>
+              <div class="forecast-day">${formatDay(forecastDays.dt)}</div>
               <img
-                src="http://openweathermap.org/img/wn/02d@2x.png"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDays.weather[0].icon
+                }@2x.png"
                 alt=""
                 id="icon-today"
                 width="42px"
               />
               <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-max">°C</span>
-                <span class="weather-forecast-min"> °C</span>
+                <span class="weather-forecast-max"> ${Math.round(
+                  forecastDays.temp.max
+                )} °C</span>
+                <span class="weather-forecast-min"> | ${Math.round(
+                  forecastDays.temp.min
+                )} °C</span>
               </div>
               <ul class="climate-values-small">
-                <li id="forecast-description">Description</li>
-                <li id="forecast-humidity">Humiditiy</li>
-                <li id="forecast-wind">Wind speed</li>
+                <li id="forecast-description" class="description">${
+                  forecastDays.weather[0].description
+                }</li>
+                <li id="forecast-humidity">Humidity: ${
+                  forecastDays.humidity
+                } %</li>
+                <li id="forecast-wind">Wind: ${Math.round(
+                  forecastDays.wind_speed
+                )} km/h</li>
               </ul>
             </div>
           </div>
         `;
+    }
   });
 
-  forecast.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
@@ -84,7 +116,7 @@ function getTemperature(response) {
   let h1 = document.querySelector("#current-city");
 
   tempToday.innerHTML = `${celsiusTemperature}`;
-  windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   descriptionElement.innerHTML = `${response.data.weather[0].description}`;
   h1.innerHTML = `${response.data.name}`;

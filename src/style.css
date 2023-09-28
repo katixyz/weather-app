@@ -151,6 +151,10 @@ a {
   padding: 20px;
 }
 
+.weather-forecast-min {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .fahrenheit-small {
   opacity: 0.5;
   padding: 25px 10px;
