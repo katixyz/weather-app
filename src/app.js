@@ -27,6 +27,45 @@ if (minutes > 9) {
   date.innerHTML = `${day} ${hour}:0${minutes}`;
 }
 
+// Display forecast:
+
+function displayForecast() {
+  let forecast = document.querySelector("#weather-forecast");
+
+  let forecastHTML = "";
+  let forecastDays = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-date">
+              <div class="forecast-day">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/02d@2x.png"
+                alt=""
+                id="icon-today"
+                width="42px"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-max">°C</span>
+                <span class="weather-forecast-min"> °C</span>
+              </div>
+              <ul class="climate-values-small">
+                <li id="forecast-description">Description</li>
+                <li id="forecast-humidity">Humiditiy</li>
+                <li id="forecast-wind">Wind speed</li>
+              </ul>
+            </div>
+          </div>
+        `;
+  });
+
+  forecast.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 // Change city:
 
 function getTemperature(response) {
