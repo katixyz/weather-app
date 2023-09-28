@@ -22,9 +22,9 @@ let minutes = now.getMinutes();
 let date = document.querySelector("#date");
 
 if (minutes > 9) {
-  date.innerHTML = `${day} ${hour}:${minutes}`;
+  date.innerHTML = `Last updated: ${day} ${hour}:${minutes}`;
 } else {
-  date.innerHTML = `${day} ${hour}:0${minutes}`;
+  date.innerHTML = `Last updated: ${day} ${hour}:0${minutes}`;
 }
 
 // Display forecast:
