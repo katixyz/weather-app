@@ -36,7 +36,7 @@ function getTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#icon-today");
-  let h1 = document.querySelector("h1");
+  let h1 = document.querySelector("#current-city");
 
   tempToday.innerHTML = `${celsiusTemperature}`;
   windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
